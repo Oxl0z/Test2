@@ -22,68 +22,49 @@ tailwind.config={theme:{extend:{colors:{
 <style>
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none}
 input,textarea{-webkit-user-select:text;user-select:text}
-body{font-family:'Outfit',sans-serif;background:#000;color:#c9cfd4;overscroll-behavior:none;min-height:100dvh}
-::-webkit-scrollbar{width:3px}
-::-webkit-scrollbar-track{background:transparent}
-::-webkit-scrollbar-thumb{background:#152418;border-radius:9px}
+body{font-family:'Outfit',sans-serif;background:#000;color:#d1d5db;overscroll-behavior:none;min-height:100dvh}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:#152418;border-radius:9px}
 input,select,textarea{font-family:inherit}
-
 #ambientBg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
 .orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.05;animation:drift 20s ease-in-out infinite alternate}
 .orb-1{width:280px;height:280px;background:#10b981;top:-100px;left:-80px;animation-duration:28s}
 .orb-2{width:220px;height:220px;background:#059669;bottom:8%;right:-90px;animation-duration:32s;animation-delay:-6s}
 .orb-3{width:180px;height:180px;background:#22d3ee;top:45%;left:25%;animation-duration:24s;animation-delay:-12s;opacity:.025}
 @keyframes drift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(25px,-18px) scale(1.08)}100%{transform:translate(-18px,25px) scale(.94)}}
-
 .glass{background:rgba(10,18,12,.7);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(21,36,24,.7);border-radius:16px}
 .glass-solid{background:#0a120c;border:1px solid #152418;border-radius:16px}
 .glass-hover{transition:border-color .25s,box-shadow .25s,transform .15s}
 .glass-hover:active{transform:scale(.98);border-color:rgba(16,185,129,.25)}
-
-.tab-active{color:#34d399;border-color:#34d399}
-.tab-inactive{color:#374151;border-color:transparent}
-.tab-inactive:active{color:#6b7280}
-
+.tab-active{color:#34d399;border-color:#34d399}.tab-inactive{color:#4b5563;border-color:transparent}.tab-inactive:active{color:#9ca3af}
 .btn-primary{background:linear-gradient(135deg,#10b981,#059669);color:#fff;border:none;border-radius:14px;font-weight:600;cursor:pointer;transition:transform .12s,box-shadow .25s;box-shadow:0 4px 24px rgba(16,185,129,.18);min-height:48px}
-.btn-primary:active{transform:scale(.97);box-shadow:0 2px 12px rgba(16,185,129,.12)}
-.btn-danger{background:linear-gradient(135deg,#dc2626,#b91c1c);color:#fff;border:none;border-radius:14px;font-weight:600;cursor:pointer;box-shadow:0 4px 16px rgba(220,38,38,.18);min-height:48px}
+.btn-primary:active{transform:scale(.97)}.btn-danger{background:linear-gradient(135deg,#dc2626,#b91c1c);color:#fff;border:none;border-radius:14px;font-weight:600;cursor:pointer;min-height:48px}
 .btn-ghost{background:transparent;border:1px solid #152418;color:#9ca3af;border-radius:14px;cursor:pointer;transition:all .2s;min-height:48px}
 .btn-ghost:active{border-color:#10b981;color:#10b981;background:rgba(16,185,129,.04)}
-
 .glow{box-shadow:0 0 40px rgba(16,185,129,.08),inset 0 1px 0 rgba(255,255,255,.02)}
-
 .fade-in{animation:fadeIn .35s cubic-bezier(.4,0,.2,1)}
 @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 .slide-up{animation:slideUp .4s cubic-bezier(.4,0,.2,1)}
 @keyframes slideUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-@keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
-.shake{animation:shake .4s ease}
-
-@keyframes pulse-ring{0%{box-shadow:0 0 0 0 rgba(239,68,68,.4)}70%{box-shadow:0 0 0 10px rgba(239,68,68,0)}100%{box-shadow:0 0 0 0 rgba(239,68,68,0)}}
-.panic-pulse{animation:pulse-ring 2s cubic-bezier(.4,0,.6,1) infinite}
-
+@keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}.shake{animation:shake .4s ease}
+@keyframes pulse-ring{0%{box-shadow:0 0 0 0 rgba(239,68,68,.4)}70%{box-shadow:0 0 0 10px rgba(239,68,68,0)}100%{box-shadow:0 0 0 0 rgba(239,68,68,0)}}.panic-pulse{animation:pulse-ring 2s cubic-bezier(.4,0,.6,1) infinite}
+@keyframes toastIn{from{opacity:0;transform:translateY(20px) scale(.9)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes toastOut{from{opacity:1}to{opacity:0;transform:translateY(-10px)}}
+.toast{animation:toastIn .3s ease,toastOut .3s ease 1.2s forwards}
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:100;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom)}
 @media(min-height:600px){.overlay{align-items:center;padding-bottom:0}}
-
 .input-field{background:rgba(5,10,6,.9);border:1px solid #152418;border-radius:12px;color:#e5e7eb;padding:14px 16px;width:100%;font-size:16px;transition:border-color .25s,box-shadow .25s;min-height:48px}
 .input-field:focus{outline:none;border-color:#10b981;box-shadow:0 0 0 3px rgba(16,185,129,.08)}
-
 .sub-chip{transition:all .2s cubic-bezier(.4,0,.2,1);min-height:56px}
-.sub-chip.selected{border-color:#10b981 !important;background:rgba(16,185,129,.07) !important;box-shadow:0 0 20px rgba(16,185,129,.1)}
+.sub-chip.selected{border-color:#10b981!important;background:rgba(16,185,129,.07)!important;box-shadow:0 0 20px rgba(16,185,129,.1)}
 .sub-chip.selected .sub-name{color:#fff}
-
-.roa-chip{transition:all .2s;min-height:48px}
-.roa-chip.selected{border-color:#10b981 !important;background:rgba(16,185,129,.08) !important;color:#34d399 !important}
-
+.roa-chip{transition:all .2s;min-height:48px}.roa-chip.selected{border-color:#10b981!important;background:rgba(16,185,129,.08)!important;color:#34d399!important}
 .pin-dot{width:16px;height:16px;border-radius:50%;border:2px solid #243c28;transition:all .2s}
 .pin-dot.filled{background:#10b981;border-color:#10b981;box-shadow:0 0 10px rgba(16,185,129,.3)}
 .pin-dot.error{border-color:#ef4444;background:#ef4444}
-.pin-key{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:600;color:#e5e7eb;background:rgba(21,36,24,.5);border:1px solid rgba(36,60,40,.6);cursor:pointer;transition:all .15s;-webkit-tap-highlight-color:transparent}
+.pin-key{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:600;color:#e5e7eb;background:rgba(21,36,24,.5);border:1px solid rgba(36,60,40,.6);cursor:pointer;transition:all .15s}
 .pin-key:active{background:rgba(16,185,129,.12);border-color:rgba(16,185,129,.3);transform:scale(.93)}
-
 .quick-btn{min-height:64px;border-radius:16px;border:1px solid rgba(21,36,24,.7);background:rgba(10,18,12,.6);cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:12px;padding:12px 16px}
 .quick-btn:active{transform:scale(.97);border-color:rgba(16,185,129,.3);background:rgba(16,185,129,.04)}
-
 .stagger>*{opacity:0;animation:fadeIn .3s cubic-bezier(.4,0,.2,1) forwards}
 .stagger>*:nth-child(1){animation-delay:.04s}.stagger>*:nth-child(2){animation-delay:.08s}.stagger>*:nth-child(3){animation-delay:.12s}
 .stagger>*:nth-child(4){animation-delay:.16s}.stagger>*:nth-child(5){animation-delay:.2s}.stagger>*:nth-child(6){animation-delay:.24s}
@@ -92,553 +73,365 @@ input,select,textarea{font-family:inherit}
 </style>
 </head>
 <body>
-
 <div id="pinScreen" class="fixed inset-0 z-[200] bg-black flex flex-col items-center justify-center px-8">
-  <div class="mb-10 text-center">
-    <div class="text-3xl mb-2">🔒</div>
-    <h1 class="text-xl font-bold text-white tracking-tight">SafeCheck</h1>
-    <p id="pinLabel" class="text-xs text-gray-500 mt-1.5 font-mono">Entrez votre PIN</p>
-  </div>
-  <div id="pinDots" class="flex gap-4 mb-10">
-    <div class="pin-dot"></div><div class="pin-dot"></div><div class="pin-dot"></div><div class="pin-dot"></div>
-  </div>
-  <div class="grid grid-cols-3 gap-4" id="pinPad">
-    <button class="pin-key" onclick="pinInput('1')">1</button>
-    <button class="pin-key" onclick="pinInput('2')">2</button>
-    <button class="pin-key" onclick="pinInput('3')">3</button>
-    <button class="pin-key" onclick="pinInput('4')">4</button>
-    <button class="pin-key" onclick="pinInput('5')">5</button>
-    <button class="pin-key" onclick="pinInput('6')">6</button>
-    <button class="pin-key" onclick="pinInput('7')">7</button>
-    <button class="pin-key" onclick="pinInput('8')">8</button>
-    <button class="pin-key" onclick="pinInput('9')">9</button>
-    <div></div>
-    <button class="pin-key" onclick="pinInput('0')">0</button>
-    <button class="pin-key text-base" onclick="pinDelete()">⌫</button>
-  </div>
+  <div class="mb-10 text-center"><div class="text-3xl mb-2">🔒</div><h1 class="text-xl font-bold text-white tracking-tight">SafeCheck</h1><p id="pinLabel" class="text-xs text-gray-400 mt-1.5 font-mono">Entrez votre PIN</p></div>
+  <div id="pinDots" class="flex gap-4 mb-10"><div class="pin-dot"></div><div class="pin-dot"></div><div class="pin-dot"></div><div class="pin-dot"></div></div>
+  <div class="grid grid-cols-3 gap-4"><button class="pin-key" onclick="pinInput('1')">1</button><button class="pin-key" onclick="pinInput('2')">2</button><button class="pin-key" onclick="pinInput('3')">3</button><button class="pin-key" onclick="pinInput('4')">4</button><button class="pin-key" onclick="pinInput('5')">5</button><button class="pin-key" onclick="pinInput('6')">6</button><button class="pin-key" onclick="pinInput('7')">7</button><button class="pin-key" onclick="pinInput('8')">8</button><button class="pin-key" onclick="pinInput('9')">9</button><div></div><button class="pin-key" onclick="pinInput('0')">0</button><button class="pin-key text-base" onclick="pinDelete()">⌫</button></div>
 </div>
-
 <div id="ambientBg" class="hidden"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div></div>
+<div id="toastContainer" class="fixed top-16 left-0 right-0 z-[150] flex justify-center pointer-events-none"></div>
 <div id="mainApp" class="hidden">
 <div id="app" class="relative z-10 max-w-lg mx-auto pb-24 px-4 pt-3"></div>
-
 <nav class="fixed bottom-0 left-0 right-0 z-50" style="background:rgba(0,0,0,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid rgba(21,36,24,.5)">
   <div class="max-w-lg mx-auto flex" style="padding-bottom:env(safe-area-inset-bottom)">
-    <button onclick="router.navigate('dashboard')" data-tab="dashboard" class="flex-1 flex flex-col items-center py-3.5 gap-1 tab-inactive border-t-2 transition-all duration-200">
-      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-      <span class="text-[10px] font-medium tracking-wide">Accueil</span>
-    </button>
-    <button onclick="router.navigate('log')" data-tab="log" class="flex-1 flex flex-col items-center py-3.5 gap-1 tab-inactive border-t-2 transition-all duration-200">
-      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
-      <span class="text-[10px] font-medium tracking-wide">Log</span>
-    </button>
-    <button onclick="router.navigate('history')" data-tab="history" class="flex-1 flex flex-col items-center py-3.5 gap-1 tab-inactive border-t-2 transition-all duration-200">
-      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
-      <span class="text-[10px] font-medium tracking-wide">Historique</span>
-    </button>
-    <button onclick="router.navigate('settings')" data-tab="settings" class="flex-1 flex flex-col items-center py-3.5 gap-1 tab-inactive border-t-2 transition-all duration-200">
-      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
-      <span class="text-[10px] font-medium tracking-wide">Config</span>
-    </button>
+    <button onclick="router.navigate('dashboard')" data-tab="dashboard" class="flex-1 flex flex-col items-center py-3.5 gap-1 tab-inactive border-t-2 transition-all duration-200"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span class="text-[10px] font-medium tracking-wide">Accueil</span></button>
+    <button onclick="router.navigate('log')" data-tab="log" class="flex-1 flex flex-col items-center py-3.5 gap-1 tab-inactive border-t-2 transition-all duration-200"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg><span class="text-[10px] font-medium tracking-wide">Log</span></button>
+    <button onclick="router.navigate('history')" data-tab="history" class="flex-1 flex flex-col items-center py-3.5 gap-1 tab-inactive border-t-2 transition-all duration-200"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg><span class="text-[10px] font-medium tracking-wide">Historique</span></button>
+    <button onclick="router.navigate('settings')" data-tab="settings" class="flex-1 flex flex-col items-center py-3.5 gap-1 tab-inactive border-t-2 transition-all duration-200"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg><span class="text-[10px] font-medium tracking-wide">Config</span></button>
   </div>
 </nav>
-
 <div id="panicOverlay" class="overlay hidden" onclick="closePanic(event)">
   <div class="glass p-6 mx-4 max-w-md w-full max-h-[85vh] overflow-y-auto slide-up" style="border-radius:20px 20px 8px 8px" onclick="event.stopPropagation()">
-    <div class="flex items-center justify-between mb-5">
-      <h2 class="text-lg font-bold text-white flex items-center gap-2.5">
-        <span class="w-9 h-9 rounded-full bg-red-500/15 flex items-center justify-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
-        Aide d'urgence
-      </h2>
-      <button onclick="closePanic()" class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white text-sm">✕</button>
-    </div>
+    <div class="flex items-center justify-between mb-5"><h2 class="text-lg font-bold text-white flex items-center gap-2.5"><span class="w-9 h-9 rounded-full bg-red-500/15 flex items-center justify-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>Aide d'urgence</h2><button onclick="closePanic()" class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-gray-400 text-sm">✕</button></div>
     <div class="space-y-4 text-sm">
-      <div class="rounded-xl p-4" style="background:rgba(220,38,38,.06);border:1px solid rgba(220,38,38,.18)">
-        <p class="font-semibold text-red-400 mb-3 text-xs uppercase tracking-wider">Appeler maintenant</p>
+      <div class="rounded-xl p-4" style="background:rgba(220,38,38,.06);border:1px solid rgba(220,38,38,.18)"><p class="font-semibold text-red-400 mb-3 text-xs uppercase tracking-wider">Appeler maintenant</p>
         <a href="tel:15" class="flex items-center gap-3 py-3 text-white"><span class="w-12 h-12 rounded-xl bg-red-500/15 flex items-center justify-center text-xl">🇫🇷</span><div><p class="font-semibold">SAMU</p><p class="font-mono text-red-400 text-xl">15</p></div></a>
         <a href="tel:112" class="flex items-center gap-3 py-3 text-white"><span class="w-12 h-12 rounded-xl bg-red-500/15 flex items-center justify-center text-xl">🇪🇺</span><div><p class="font-semibold">Urgences EU</p><p class="font-mono text-red-400 text-xl">112</p></div></a>
-        <a href="tel:0800231313" class="flex items-center gap-3 py-3 text-white"><span class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-xl">🆘</span><div><p class="font-semibold">Drogues Info Service</p><p class="font-mono text-blue-400">0 800 23 13 13</p></div></a>
-      </div>
-      <div class="rounded-xl p-4" style="background:rgba(16,185,129,.04);border:1px solid rgba(16,185,129,.12)">
-        <p class="font-semibold text-em-400 mb-3 text-xs uppercase tracking-wider">Gestes de base</p>
-        <div class="space-y-3">
-          <div class="flex items-start gap-3"><span class="text-xl mt-0.5">💧</span><div><p class="text-white font-medium">Hydratation</p><p class="text-gray-400 text-xs leading-relaxed">Petites gorgées d'eau. Pas d'alcool.</p></div></div>
-          <div class="flex items-start gap-3"><span class="text-xl mt-0.5">🫁</span><div><p class="text-white font-medium">Respiration</p><p class="text-gray-400 text-xs leading-relaxed">Inspire 4s → Retiens 4s → Expire 6s. Répète.</p></div></div>
-          <div class="flex items-start gap-3"><span class="text-xl mt-0.5">🧊</span><div><p class="text-white font-medium">Ancrage</p><p class="text-gray-400 text-xs leading-relaxed">Tiens un objet frais. Nomme 5 choses que tu vois.</p></div></div>
-          <div class="flex items-start gap-3"><span class="text-xl mt-0.5">🛌</span><div><p class="text-white font-medium">Position</p><p class="text-gray-400 text-xs leading-relaxed">PLS si inconscient·e. Ne jamais laisser seul·e.</p></div></div>
-        </div>
-      </div>
-      <a href="https://combo.tripsit.me/" target="_blank" rel="noopener" class="block rounded-xl p-4 text-center font-semibold text-calm-cyan text-sm" style="background:rgba(34,211,238,.05);border:1px solid rgba(34,211,238,.15)">
-        🔗 Vérifier les interactions (TripSit)
-      </a>
+        <a href="tel:0800231313" class="flex items-center gap-3 py-3 text-white"><span class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-xl">🆘</span><div><p class="font-semibold">Drogues Info Service</p><p class="font-mono text-blue-400">0 800 23 13 13</p></div></a></div>
+      <div class="rounded-xl p-4" style="background:rgba(16,185,129,.04);border:1px solid rgba(16,185,129,.12)"><p class="font-semibold text-em-400 mb-3 text-xs uppercase tracking-wider">Gestes de base</p><div class="space-y-3">
+        <div class="flex items-start gap-3"><span class="text-xl mt-0.5">💧</span><div><p class="text-white font-medium">Hydratation</p><p class="text-gray-400 text-xs leading-relaxed">Petites gorgées d'eau. Pas d'alcool.</p></div></div>
+        <div class="flex items-start gap-3"><span class="text-xl mt-0.5">🫁</span><div><p class="text-white font-medium">Respiration</p><p class="text-gray-400 text-xs leading-relaxed">4s inspir → 4s retenir → 6s expir. Répète.</p></div></div>
+        <div class="flex items-start gap-3"><span class="text-xl mt-0.5">🧊</span><div><p class="text-white font-medium">Ancrage</p><p class="text-gray-400 text-xs leading-relaxed">Objet frais en main. Nomme 5 choses que tu vois.</p></div></div>
+        <div class="flex items-start gap-3"><span class="text-xl mt-0.5">🛌</span><div><p class="text-white font-medium">Position</p><p class="text-gray-400 text-xs leading-relaxed">PLS si inconscient·e. Ne jamais laisser seul·e.</p></div></div></div></div>
+      <a href="https://combo.tripsit.me/" target="_blank" rel="noopener" class="block rounded-xl p-4 text-center font-semibold text-calm-cyan text-sm" style="background:rgba(34,211,238,.05);border:1px solid rgba(34,211,238,.15)">🔗 Vérifier les interactions (TripSit)</a>
     </div>
   </div>
 </div>
-
-<button onclick="openPanic()" class="fixed top-4 right-4 z-40 bg-red-600 text-white rounded-full w-11 h-11 flex items-center justify-center panic-pulse shadow-lg shadow-red-900/30" title="Urgence">
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-</button>
+<button onclick="openPanic()" class="fixed top-4 right-4 z-40 bg-red-600 text-white rounded-full w-11 h-11 flex items-center justify-center panic-pulse shadow-lg shadow-red-900/30"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></button>
 </div>
 
 <script>
-const PIN_KEY='safecheck_pin';
-let pinBuffer='';
-let pinMode='check';
+const PIN_KEY='safecheck_pin',AUTH_KEY='safecheck_auth_ts',SESSION_TIMEOUT=15*60*1000;
+let pinBuffer='',pinMode='check',pinFirstEntry='';
 
-function hashPin(pin){let h=0;for(let i=0;i<pin.length;i++){h=((h<<5)-h)+pin.charCodeAt(i);h|=0}return'sc_'+Math.abs(h).toString(36)}
-
+function hashPin(p){let h=0;for(let i=0;i<p.length;i++){h=((h<<5)-h)+p.charCodeAt(i);h|=0}return'sc_'+Math.abs(h).toString(36)}
 function initPinScreen(){
   const stored=localStorage.getItem(PIN_KEY);
   if(!stored){pinMode='create';document.getElementById('pinLabel').textContent='Créez un code PIN à 4 chiffres'}
-  else{pinMode='check';document.getElementById('pinLabel').textContent='Entrez votre PIN'}
+  else{
+    const lastAuth=parseInt(localStorage.getItem(AUTH_KEY)||'0');
+    if(Date.now()-lastAuth<SESSION_TIMEOUT){unlockApp();return}
+    pinMode='check';document.getElementById('pinLabel').textContent='Entrez votre PIN';
+  }
   pinBuffer='';updateDots();
 }
-
-function pinInput(n){
-  if(pinBuffer.length>=4)return;
-  pinBuffer+=n;updateDots();
-  if(pinBuffer.length===4)setTimeout(()=>validatePin(),150);
-}
-
-function pinDelete(){
-  if(!pinBuffer.length)return;
-  pinBuffer=pinBuffer.slice(0,-1);updateDots();
-}
-
-function updateDots(){
-  const dots=document.querySelectorAll('#pinDots .pin-dot');
-  dots.forEach((d,i)=>{d.classList.toggle('filled',i<pinBuffer.length);d.classList.remove('error')});
-}
-
-let pinFirstEntry='';
+function pinInput(n){if(pinBuffer.length>=4)return;pinBuffer+=n;updateDots();if(pinBuffer.length===4)setTimeout(validatePin,150)}
+function pinDelete(){if(!pinBuffer.length)return;pinBuffer=pinBuffer.slice(0,-1);updateDots()}
+function updateDots(){document.querySelectorAll('#pinDots .pin-dot').forEach((d,i)=>{d.classList.toggle('filled',i<pinBuffer.length);d.classList.remove('error')})}
 function validatePin(){
   const stored=localStorage.getItem(PIN_KEY);
   if(pinMode==='create'){
-    if(!pinFirstEntry){
-      pinFirstEntry=pinBuffer;pinBuffer='';updateDots();
-      document.getElementById('pinLabel').textContent='Confirmez votre PIN';return;
-    }
-    if(pinBuffer===pinFirstEntry){
-      localStorage.setItem(PIN_KEY,hashPin(pinBuffer));unlockApp();
-    } else {
-      pinError();pinFirstEntry='';document.getElementById('pinLabel').textContent='PINs différents — recommencez';
-    }
+    if(!pinFirstEntry){pinFirstEntry=pinBuffer;pinBuffer='';updateDots();document.getElementById('pinLabel').textContent='Confirmez votre PIN';return}
+    if(pinBuffer===pinFirstEntry){localStorage.setItem(PIN_KEY,hashPin(pinBuffer));unlockApp()}else{pinError();pinFirstEntry='';document.getElementById('pinLabel').textContent='PINs différents — recommencez'}
     return;
   }
-  if(hashPin(pinBuffer)===stored){unlockApp()}
-  else{pinError();document.getElementById('pinLabel').textContent='PIN incorrect'}
+  if(hashPin(pinBuffer)===stored)unlockApp();else{pinError();document.getElementById('pinLabel').textContent='PIN incorrect'}
 }
-
-function pinError(){
-  const dots=document.querySelectorAll('#pinDots .pin-dot');
-  dots.forEach(d=>{d.classList.add('error');d.classList.remove('filled')});
-  document.getElementById('pinDots').classList.add('shake');
-  setTimeout(()=>{document.getElementById('pinDots').classList.remove('shake');pinBuffer='';updateDots()},500);
-}
-
+function pinError(){document.querySelectorAll('#pinDots .pin-dot').forEach(d=>{d.classList.add('error');d.classList.remove('filled')});document.getElementById('pinDots').classList.add('shake');setTimeout(()=>{document.getElementById('pinDots').classList.remove('shake');pinBuffer='';updateDots()},500)}
 function unlockApp(){
-  document.getElementById('pinScreen').classList.add('hidden');
-  document.getElementById('mainApp').classList.remove('hidden');
-  document.getElementById('ambientBg').classList.remove('hidden');
+  localStorage.setItem(AUTH_KEY,Date.now().toString());
+  document.getElementById('pinScreen').classList.add('hidden');document.getElementById('mainApp').classList.remove('hidden');document.getElementById('ambientBg').classList.remove('hidden');
   router.navigate('dashboard');startAutoRefresh();
 }
+function touchActivity(){localStorage.setItem(AUTH_KEY,Date.now().toString())}
+document.addEventListener('touchstart',touchActivity,{passive:true});document.addEventListener('click',touchActivity);
 
-const SubstanceDatabase = Object.freeze({
-  THC:        { cat:'Cannabis',     onset:[10,30],  peak:120, duration:[240,360], unit:'puff',  color:'#22c55e', emoji:'🌿',  units:{Vaped:'puff',Oral:'joint',Nasal:'joint'}, defaultDose:1, defaultROA:'Vaped' },
-  CBD:        { cat:'Cannabis',     onset:[15,45],  peak:90,  duration:[180,360], unit:'joint',    color:'#86efac', emoji:'🍃', units:{Oral:'joint',Vaped:'puff'}, info:'Non psychoactif — anxiolytique' },
-  '3-MMC':    { cat:'Cathinones',   onset:[15,45],  peak:90,  duration:[180,300], unit:'trace',    color:'#fbbf24', emoji:'⚡', units:{Nasal:'trace',Oral:'mg',IV:'mg'}, warning:'Risque de redose élevé', defaultDose:1, defaultROA:'Nasal' },
-  '4-MMC':    { cat:'Cathinones',   onset:[20,40],  peak:120, duration:[240,360], unit:'trace',    color:'#f97316', emoji:'🔶', units:{Nasal:'trace',Oral:'mg',IV:'mg'} },
-  Coke:       { cat:'Stimulants',   onset:[5,10],   peak:30,  duration:[45,70],   unit:'trace',    color:'#e5e7eb', emoji:'❄️', units:{Nasal:'trace',IV:'mg',Oral:'mg'}, warning:'Cardiotoxicité accrue en combo' },
-  Amphétamine:{ cat:'Stimulants',   onset:[20,60],  peak:120, duration:[300,480], unit:'trace',    color:'#f472b6', emoji:'⚙️', units:{Nasal:'trace',Oral:'mg'} },
-  MDMA:       { cat:'Empathogènes', onset:[45,75],  peak:180, duration:[300,480], unit:'mg',       color:'#a78bfa', emoji:'💎', units:{Nasal:'trace',Oral:'mg'}, wait_period:'3 mois minimum entre chaque prise' },
-  Ecstasy:    { cat:'Empathogènes', onset:[30,60],  peak:150, duration:[240,420], unit:'cp',       color:'#d946ef', emoji:'🪩', warning:'Dosage variable par comprimé — tester', wait_period:'3 mois minimum entre chaque prise' },
-  '2C-B':     { cat:'Psychédéliques',onset:[30,75], peak:120, duration:[300,420], unit:'mg',       color:'#c084fc', emoji:'🔮', units:{Nasal:'trace',Oral:'mg'} },
-  LSD:        { cat:'Psychédéliques',onset:[30,60], peak:180, duration:[480,720], unit:'buvard',   color:'#818cf8', emoji:'🌀', info:'Durée très longue — prévoir le set & setting' },
-  Ket:        { cat:'Dissociatifs', onset:[5,20],   peak:45,  duration:[60,120],  unit:'trace',    color:'#22d3ee', emoji:'🕳️', units:{Nasal:'trace',IV:'mg',Oral:'mg'}, warning:'Risque de k-hole à haute dose' },
-  GHB:        { cat:'Dépresseurs',  onset:[15,30],  peak:60,  duration:[90,180],  unit:'ml',       color:'#f43f5e', emoji:'🧪', warning:'Marge dose/surdose très étroite. JAMAIS avec alcool' },
-  Alcool:     { cat:'Dépresseurs',  onset:[10,30],  peak:60,  duration:[120,300], unit:'verres',   color:'#fbbf24', emoji:'🍺' },
-  Nicotine:   { cat:'Stimulants',   onset:[1,3],    peak:10,  duration:[20,40],   unit:'clope',    color:'#a3a3a3', emoji:'🚬', units:{Vaped:'puff'} }
+function showToast(msg,type='success'){
+  const c=document.getElementById('toastContainer');
+  const t=document.createElement('div');
+  t.className='toast px-5 py-3 rounded-2xl text-sm font-semibold pointer-events-none';
+  t.style.cssText=type==='success'?'background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.3);color:#34d399':'background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.3);color:#fbbf24';
+  t.textContent=msg;c.appendChild(t);
+  try{navigator.vibrate&&navigator.vibrate(type==='success'?[50]:[100,50,100])}catch{}
+  setTimeout(()=>t.remove(),1600);
+}
+
+const SubstanceDatabase=Object.freeze({
+  THC:        {cat:'Cannabis',    onset:[10,30], peak:120,duration:[240,360], unit:'puff',  color:'#22c55e',emoji:'🌿', units:{Vaped:'puff',Oral:'joint',Nasal:'joint'}, maxSafe:5, defaultDose:1,defaultROA:'Vaped'},
+  CBD:        {cat:'Cannabis',    onset:[15,45], peak:90, duration:[180,360], unit:'joint',   color:'#86efac',emoji:'🍃', units:{Oral:'joint',Vaped:'puff'}, info:'Non psychoactif — anxiolytique'},
+  '3-MMC':    {cat:'Cathinones',  onset:[15,45], peak:90, duration:[180,300], unit:'trace',   color:'#fbbf24',emoji:'⚡', units:{Nasal:'trace',Oral:'mg',IV:'mg'}, warning:'Risque de redose élevé', maxSafe:4, defaultDose:1,defaultROA:'Nasal'},
+  '4-MMC':    {cat:'Cathinones',  onset:[20,40], peak:120,duration:[240,360], unit:'trace',   color:'#f97316',emoji:'🔶', units:{Nasal:'trace',Oral:'mg',IV:'mg'}, maxSafe:4},
+  Coke:       {cat:'Stimulants',  onset:[5,10],  peak:30, duration:[45,70],   unit:'trace',   color:'#e5e7eb',emoji:'❄️', units:{Nasal:'trace',IV:'mg',Oral:'mg'}, warning:'Cardiotoxicité accrue en combo', maxSafe:5},
+  Amphétamine:{cat:'Stimulants',  onset:[20,60], peak:120,duration:[300,480], unit:'trace',   color:'#f472b6',emoji:'⚙️', units:{Nasal:'trace',Oral:'mg'}, maxSafe:3},
+  MDMA:       {cat:'Empathogènes',onset:[45,75], peak:180,duration:[300,480], unit:'mg',      color:'#a78bfa',emoji:'💎', units:{Nasal:'trace',Oral:'mg'}, wait_period:'3 mois minimum', maxSafe:200},
+  Ecstasy:    {cat:'Empathogènes',onset:[30,60], peak:150,duration:[240,420], unit:'cp',      color:'#d946ef',emoji:'🪩', warning:'Dosage variable par comprimé', wait_period:'3 mois minimum', maxSafe:2},
+  '2C-B':     {cat:'Psychédéliques',onset:[30,75],peak:120,duration:[300,420],unit:'mg',      color:'#c084fc',emoji:'🔮', units:{Nasal:'trace',Oral:'mg'}, maxSafe:25},
+  LSD:        {cat:'Psychédéliques',onset:[30,60],peak:180,duration:[480,720],unit:'buvard',  color:'#818cf8',emoji:'🌀', info:'Durée très longue — prévoir set & setting', maxSafe:3},
+  Ket:        {cat:'Dissociatifs',onset:[5,20],  peak:45, duration:[60,120],  unit:'trace',   color:'#22d3ee',emoji:'🕳️', units:{Nasal:'trace',IV:'mg',Oral:'mg'}, warning:'Risque de k-hole à haute dose', maxSafe:5},
+  GHB:        {cat:'Dépresseurs', onset:[15,30], peak:60, duration:[90,180],  unit:'ml',      color:'#f43f5e',emoji:'🧪', warning:'Marge dose/surdose très étroite. JAMAIS avec alcool', maxSafe:2},
+  Alcool:     {cat:'Dépresseurs', onset:[10,30], peak:60, duration:[120,300], unit:'verres',  color:'#fbbf24',emoji:'🍺', maxSafe:6},
+  Nicotine:   {cat:'Stimulants',  onset:[1,3],   peak:10, duration:[20,40],   unit:'clope',   color:'#a3a3a3',emoji:'🚬', units:{Vaped:'puff'}}
 });
 
-function getUnit(substance,roa){
-  const sub=SubstanceDatabase[substance];if(!sub)return'mg';
-  if(sub.units&&roa&&sub.units[roa])return sub.units[roa];
-  return sub.unit;
+function getUnit(s,r){const d=SubstanceDatabase[s];if(!d)return'mg';return(d.units&&r&&d.units[r])||d.unit}
+function getPresets(s,r){
+  const u=getUnit(s,r);
+  const m={THC:{puff:[1,2,3],joint:[0.5,1,2]},CBD:{joint:[0.5,1,2],puff:[1,2,3]},'3-MMC':{trace:[1,2,3],mg:[50,100,150]},'4-MMC':{trace:[1,2,3],mg:[100,150,200]},Coke:{trace:[1,2,3],mg:[30,50,80]},Amphétamine:{trace:[1,2,3],mg:[10,20,30]},MDMA:{mg:[80,100,125],trace:[1,2,3]},Ecstasy:{cp:[0.5,1,1.5]},'2C-B':{mg:[10,15,20],trace:[1,2]},LSD:{buvard:[0.5,1,2]},Ket:{trace:[1,2,3],mg:[30,50,75]},GHB:{ml:[0.5,1,1.5]},Alcool:{verres:[1,2,3]},Nicotine:{clope:[1,2,4],puff:[2,5,10]}};
+  return(m[s]&&m[s][u])||[1,2,3];
 }
 
-function getPresets(substance,roa){
-  const u=getUnit(substance,roa);
-  const map={
-    THC:{puff:[1,2,3],joint:[0.5,1,2]},
-    CBD:{joint:[0.5,1,2],puff:[1,2,3]},
-    '3-MMC':{trace:[1,2,3],mg:[50,100,150]},
-    '4-MMC':{trace:[1,2,3],mg:[100,150,200]},
-    Coke:{trace:[1,2,3],mg:[30,50,80]},
-    Amphétamine:{trace:[1,2,3],mg:[10,20,30]},
-    MDMA:{mg:[80,100,125],trace:[1,2,3]},
-    Ecstasy:{cp:[0.5,1,1.5]},
-    '2C-B':{mg:[10,15,20],trace:[1,2]},
-    LSD:{buvard:[0.5,1,2]},
-    Ket:{trace:[1,2,3],mg:[30,50,75]},
-    GHB:{ml:[0.5,1,1.5]},
-    Alcool:{verres:[1,2,3]},
-    Nicotine:{clope:[1,2,4],puff:[2,5,10]}
-  };
-  return(map[substance]&&map[substance][u])||[1,2,3];
-}
-
-const QUICK_LOGS=[
-  {substance:'3-MMC',dose:1,roa:'Nasal',label:'3-MMC · 1 trace'},
-  {substance:'THC',dose:1,roa:'Vaped',label:'THC · 1 puff'}
-];
-
+const QUICK_LOGS=[{substance:'3-MMC',dose:1,roa:'Nasal'},{substance:'THC',dose:1,roa:'Vaped'}];
 const ROA_OPTIONS=['Oral','Nasal','Vaped','IV'];
-const ROA_MODIFIERS={Oral:1,Nasal:.8,Vaped:.6,IV:.5};
+const ROA_MODIFIERS={Oral:{onset:1,peak:1,duration:1},Nasal:{onset:.7,peak:.8,duration:.7},Vaped:{onset:.5,peak:.6,duration:.6},IV:{onset:.3,peak:.5,duration:.5}};
 
 const Store={
   _key:'safecheck_entries',
   getAll(){try{return JSON.parse(localStorage.getItem(this._key))||[]}catch{return[]}},
-  save(entries){localStorage.setItem(this._key,JSON.stringify(entries))},
-  add(entry){const all=this.getAll();all.unshift(entry);this.save(all)},
+  save(e){localStorage.setItem(this._key,JSON.stringify(e))},
+  add(e){const a=this.getAll();a.unshift(e);this.save(a)},
   remove(id){this.save(this.getAll().filter(e=>e.id!==id))},
   clear(){localStorage.removeItem(this._key)},
-  exportJSON(){
-    const blob=new Blob([JSON.stringify(this.getAll(),null,2)],{type:'application/json'});
-    const a=document.createElement('a');a.href=URL.createObjectURL(blob);
-    a.download=`safecheck_${new Date().toISOString().slice(0,10)}.json`;a.click();URL.revokeObjectURL(a.href);
-  },
-  importJSON(file){
-    return new Promise((res,rej)=>{const r=new FileReader();r.onload=e=>{try{const d=JSON.parse(e.target.result);if(!Array.isArray(d))throw new Error('Format invalide');this.save(d);res(d.length)}catch(err){rej(err)}};r.readAsText(file)});
-  }
+  exportJSON(){const b=new Blob([JSON.stringify(this.getAll(),null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=`safecheck_${new Date().toISOString().slice(0,10)}.json`;a.click();URL.revokeObjectURL(a.href)},
+  async copyJSON(){try{await navigator.clipboard.writeText(JSON.stringify(this.getAll(),null,2));showToast('✓ JSON copié')}catch{showToast('Erreur copie','warn')}},
+  importJSON(f){return new Promise((res,rej)=>{const r=new FileReader();r.onload=e=>{try{const d=JSON.parse(e.target.result);if(!Array.isArray(d))throw new Error('Format invalide');this.save(d);res(d.length)}catch(err){rej(err)}};r.readAsText(f)})}
 };
 
-function calculatePharmacokinetics(entry,now=Date.now()){
+function calcPK(entry,now=Date.now()){
   const sub=SubstanceDatabase[entry.substance];
-  if(!sub)return{phase:'unknown',intensity:0,timeLeft:0};
-  const elapsed=(now-entry.timestamp)/60000,rm=ROA_MODIFIERS[entry.roa]||1;
-  const onsetMid=(sub.onset[0]+sub.onset[1])/2*rm,peakMin=sub.peak*rm,durMid=(sub.duration[0]+sub.duration[1])/2*rm;
-  if(elapsed<0)return{phase:'scheduled',intensity:0,timeLeft:durMid};
-  if(elapsed<onsetMid){const p=elapsed/onsetMid;return{phase:'onset',intensity:p*p*.6,timeLeft:durMid-elapsed}}
-  if(elapsed<onsetMid+peakMin){const p=(elapsed-onsetMid)/peakMin;return{phase:'peak',intensity:Math.min(1,.6+Math.sin(p*Math.PI)*.4),timeLeft:durMid-elapsed}}
+  if(!sub)return{phase:'unknown',intensity:0,timeLeft:0,onsetEnd:0,peakEnd:0,totalEnd:0};
+  const rm=ROA_MODIFIERS[entry.roa]||ROA_MODIFIERS.Oral;
+  const elapsed=(now-entry.timestamp)/60000;
+  const onsetMid=(sub.onset[0]+sub.onset[1])/2*rm.onset;
+  const peakMin=sub.peak*rm.peak;
+  const durMid=(sub.duration[0]+sub.duration[1])/2*rm.duration;
+  const meta={onsetEnd:onsetMid,peakEnd:onsetMid+peakMin,totalEnd:durMid};
+  if(elapsed<0)return{phase:'scheduled',intensity:0,timeLeft:durMid,...meta};
+  if(elapsed<onsetMid){const p=elapsed/onsetMid;return{phase:'onset',intensity:p*p*.65,timeLeft:durMid-elapsed,...meta}}
+  if(elapsed<onsetMid+peakMin){const p=(elapsed-onsetMid)/peakMin;return{phase:'peak',intensity:Math.min(1,.65+Math.sin(p*Math.PI)*.35),timeLeft:durMid-elapsed,...meta}}
   const ds=onsetMid+peakMin,dd=durMid-ds;
-  if(dd<=0||elapsed>durMid)return{phase:'ended',intensity:0,timeLeft:0};
-  return{phase:'comedown',intensity:Math.max(0,Math.exp(-3*(elapsed-ds)/dd)*.6),timeLeft:Math.max(0,durMid-elapsed)};
+  if(dd<=0||elapsed>durMid)return{phase:'ended',intensity:0,timeLeft:0,...meta};
+  return{phase:'comedown',intensity:Math.max(0,Math.exp(-3*(elapsed-ds)/dd)*.65),timeLeft:Math.max(0,durMid-elapsed),...meta};
 }
 
-function generateCurvePoints(entry,steps=120){
+function genPoints(entry,steps=150){
   const sub=SubstanceDatabase[entry.substance];if(!sub)return[];
-  const rm=ROA_MODIFIERS[entry.roa]||1,total=(sub.duration[0]+sub.duration[1])/2*rm,pts=[];
-  for(let i=0;i<=steps;i++){const t=entry.timestamp+(i/steps)*total*60000;pts.push({x:i/steps,y:calculatePharmacokinetics(entry,t).intensity,time:t})}
+  const rm=ROA_MODIFIERS[entry.roa]||ROA_MODIFIERS.Oral;
+  const total=(sub.duration[0]+sub.duration[1])/2*rm.duration;
+  const pts=[];for(let i=0;i<=steps;i++){const t=entry.timestamp+(i/steps)*total*60000;pts.push({y:calcPK(entry,t).intensity,time:t})}
   return pts;
 }
 
 function fmt(min){if(min<=0)return'Terminé';const h=Math.floor(min/60),m=Math.round(min%60);return h>0?`${h}h${m>0?String(m).padStart(2,'0'):''}`:m+'min'}
 function timeAgo(ts){const d=(Date.now()-ts)/60000;if(d<1)return"À l'instant";if(d<60)return`il y a ${Math.round(d)}min`;if(d<1440)return`il y a ${Math.floor(d/60)}h`;return new Date(ts).toLocaleDateString('fr-FR',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})}
 function mkId(){return crypto.randomUUID?crypto.randomUUID():Date.now().toString(36)+Math.random().toString(36).slice(2)}
+function hhmm(ts){return new Date(ts).toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})}
 
-function quickLog(idx){
-  const q=QUICK_LOGS[idx],u=getUnit(q.substance,q.roa);
+function quickLog(i){
+  const q=QUICK_LOGS[i],u=getUnit(q.substance,q.roa);
   Store.add({id:mkId(),substance:q.substance,roa:q.roa,dose:q.dose,unit:u,notes:'Quick Log',timestamp:Date.now(),created:Date.now()});
+  showToast(`✓ ${q.substance} · ${q.dose} ${u}`);
   renderDashboard(document.getElementById('app'));
 }
 
 function openPanic(){document.getElementById('panicOverlay').classList.remove('hidden')}
 function closePanic(e){if(!e||e.target===e.currentTarget)document.getElementById('panicOverlay').classList.add('hidden')}
 
-const router={
-  current:'dashboard',
-  navigate(tab){this.current=tab;document.querySelectorAll('nav button[data-tab]').forEach(b=>{b.classList.toggle('tab-active',b.dataset.tab===tab);b.classList.toggle('tab-inactive',b.dataset.tab!==tab)});renderView(tab)}
-};
-function renderView(v){({dashboard:renderDashboard,log:renderLogForm,history:renderHistory,settings:renderSettings})[v](document.getElementById('app'))}
+const router={current:'dashboard',navigate(t){this.current=t;document.querySelectorAll('nav button[data-tab]').forEach(b=>{b.classList.toggle('tab-active',b.dataset.tab===t);b.classList.toggle('tab-inactive',b.dataset.tab!==t)});({dashboard:renderDashboard,log:renderLogForm,history:renderHistory,settings:renderSettings})[t](document.getElementById('app'))}};
 
 function renderDashboard(el){
-  const entries=Store.getAll();
-  const active=entries.filter(e=>{const pk=calculatePharmacokinetics(e);return pk.phase!=='ended'&&pk.intensity>.01});
-  const last24h=entries.filter(e=>Date.now()-e.timestamp<86400000).length;
-
+  const entries=Store.getAll(),now=Date.now();
+  const active=entries.filter(e=>{const pk=calcPK(e);return pk.phase!=='ended'&&pk.intensity>.005});
+  const recent=entries.filter(e=>now-e.timestamp<86400000).length;
   let h=`<div class="fade-in">
-    <div class="flex items-center justify-between mb-5 mt-1">
-      <div>
-        <h1 class="text-[22px] font-bold text-white tracking-tight">SafeCheck</h1>
-        <p class="text-[11px] text-gray-600 font-mono mt-0.5">${new Date().toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'})}</p>
-      </div>
-      <span class="inline-flex items-center gap-2 text-xs font-mono px-3 py-1.5 rounded-full ${active.length?'text-em-400':'text-gray-600'}" style="background:${active.length?'rgba(16,185,129,.06)':'rgba(255,255,255,.02)'};border:1px solid ${active.length?'rgba(16,185,129,.15)':'rgba(255,255,255,.04)'}">
-        <span class="w-2 h-2 rounded-full ${active.length?'bg-em-400 animate-pulse':'bg-gray-700'}"></span>
-        ${active.length} actif${active.length!==1?'s':''}
-      </span>
-    </div>
-    <div class="mb-4">
-      <p class="text-[10px] text-gray-600 font-medium uppercase tracking-widest mb-2 ml-1">Quick Log</p>
-      <div class="grid grid-cols-2 gap-2">
-        ${QUICK_LOGS.map((q,i)=>{
-          const sub=SubstanceDatabase[q.substance];
-          return `<button onclick="quickLog(${i})" class="quick-btn">
-            <span class="text-2xl">${sub.emoji}</span>
-            <div class="text-left"><p class="text-white font-semibold text-[13px]">${q.substance}</p><p class="text-[11px] text-gray-500 font-mono">${q.dose} ${getUnit(q.substance,q.roa)} · ${q.roa}</p></div>
-          </button>`;
-        }).join('')}
-      </div>
-    </div>`;
-
-  if(!active.length){
-    h+=`<div class="glass p-10 text-center glow">
-      <div class="text-3xl mb-3 opacity-30">🌲</div>
-      <p class="text-gray-400 text-sm font-medium">Aucune substance active</p>
-      <p class="text-gray-600 text-xs mt-1 mb-6">Les courbes apparaîtront ici</p>
-      <button onclick="router.navigate('log')" class="btn-primary px-6 py-3.5 text-sm inline-flex items-center gap-2">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-        Entrée détaillée
-      </button>
-    </div>
-    ${last24h?`<div class="glass p-4 mt-4"><span class="text-[11px] text-gray-500 font-mono">📊 ${last24h} entrée${last24h>1?'s':''} · 24h</span></div>`:''}`;
-  } else {
-    h+=`<div class="glass p-4 mb-4 glow"><canvas id="pkCanvas" class="w-full" style="height:200px"></canvas></div>`;
+    <div class="flex items-center justify-between mb-5 mt-1"><div><h1 class="text-[22px] font-bold text-white tracking-tight">SafeCheck</h1><p class="text-[11px] text-gray-500 font-mono mt-0.5">${new Date().toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'})}</p></div>
+    <span class="inline-flex items-center gap-2 text-xs font-mono px-3 py-1.5 rounded-full ${active.length?'text-em-400':'text-gray-500'}" style="background:${active.length?'rgba(16,185,129,.06)':'rgba(255,255,255,.02)'};border:1px solid ${active.length?'rgba(16,185,129,.15)':'rgba(255,255,255,.04)'}"><span class="w-2 h-2 rounded-full ${active.length?'bg-em-400 animate-pulse':'bg-gray-700'}"></span>${active.length} actif${active.length!==1?'s':''}</span></div>
+    <div class="mb-4"><p class="text-[10px] text-gray-500 font-medium uppercase tracking-widest mb-2 ml-1">Quick Log</p><div class="grid grid-cols-2 gap-2">
+    ${QUICK_LOGS.map((q,i)=>{const sub=SubstanceDatabase[q.substance];return`<button onclick="quickLog(${i})" class="quick-btn"><span class="text-2xl">${sub.emoji}</span><div class="text-left"><p class="text-white font-semibold text-[13px]">${q.substance}</p><p class="text-[11px] text-gray-400 font-mono">${q.dose} ${getUnit(q.substance,q.roa)} · ${q.roa}</p></div></button>`}).join('')}</div></div>
+    <div class="glass p-4 mb-4 glow"><canvas id="pkCanvas" class="w-full" style="height:220px"></canvas></div>`;
+  if(active.length){
     h+=`<div class="space-y-3 stagger">`;
     active.forEach(entry=>{
-      const sub=SubstanceDatabase[entry.substance],pk=calculatePharmacokinetics(entry),pct=Math.round(pk.intensity*100);
-      const phaseLabel=pk.phase==='peak'?'▲ Peak':pk.phase==='onset'?'↗ Montée':'↘ Descente';
-      const phaseColor=pk.phase==='peak'?'#fbbf24':pk.phase==='onset'?'#34d399':'#4b5563';
-      h+=`<div class="glass glass-hover p-4">
-        <div class="flex items-center justify-between mb-3">
-          <div class="flex items-center gap-2.5"><span class="text-xl">${sub?.emoji||'💊'}</span><div>
-            <span class="text-white font-semibold text-[15px]">${entry.substance}</span>
-            <span class="text-[10px] font-mono ml-2 px-1.5 py-0.5 rounded-md text-gray-500" style="background:rgba(255,255,255,.03)">${entry.roa}</span>
-          </div></div>
-          <span class="text-[11px] font-mono font-medium" style="color:${phaseColor}">${phaseLabel}</span>
-        </div>
-        <div class="flex items-center gap-3">
-          <div class="flex-1 h-1.5 rounded-full overflow-hidden" style="background:rgba(255,255,255,.03)">
-            <div class="h-full rounded-full transition-all duration-1000" style="width:${pct}%;background:linear-gradient(90deg,${sub?.color||'#10b981'},${sub?.color||'#10b981'}88)"></div>
-          </div>
-          <span class="text-[11px] font-mono text-gray-500 w-14 text-right">${fmt(pk.timeLeft)}</span>
-        </div>
-        <div class="flex items-center justify-between mt-2">
-          <span class="text-[11px] text-gray-600 font-mono">${entry.dose?entry.dose+' '+(entry.unit||getUnit(entry.substance,entry.roa))+' · ':''}${timeAgo(entry.timestamp)}</span>
-          <span class="text-[11px] font-mono font-medium" style="color:${sub?.color||'#10b981'}">${pct}%</span>
-        </div>
-        ${sub?.warning?`<div class="mt-2 py-2 px-3 rounded-xl text-[11px] text-warn" style="background:rgba(245,158,11,.04);border:1px solid rgba(245,158,11,.1)">⚠ ${sub.warning}</div>`:''}
-      </div>`;
+      const sub=SubstanceDatabase[entry.substance],pk=calcPK(entry),pct=Math.round(pk.intensity*100);
+      const pl=pk.phase==='peak'?'▲ Peak':pk.phase==='onset'?'↗ Montée':'↘ Descente';
+      const pc=pk.phase==='peak'?'#fbbf24':pk.phase==='onset'?'#34d399':'#6b7280';
+      h+=`<div class="glass glass-hover p-4"><div class="flex items-center justify-between mb-3"><div class="flex items-center gap-2.5"><span class="text-xl">${sub?.emoji||'💊'}</span><div><span class="text-white font-semibold text-[15px]">${entry.substance}</span><span class="text-[10px] font-mono ml-2 px-1.5 py-0.5 rounded-md text-gray-400" style="background:rgba(255,255,255,.03)">${entry.roa}</span></div></div><span class="text-[11px] font-mono font-medium" style="color:${pc}">${pl}</span></div>
+      <div class="flex items-center gap-3"><div class="flex-1 h-1.5 rounded-full overflow-hidden" style="background:rgba(255,255,255,.03)"><div class="h-full rounded-full transition-all duration-1000" style="width:${pct}%;background:linear-gradient(90deg,${sub?.color||'#10b981'},${sub?.color||'#10b981'}88)"></div></div><span class="text-[11px] font-mono text-gray-400 w-14 text-right">${fmt(pk.timeLeft)}</span></div>
+      <div class="flex items-center justify-between mt-2"><span class="text-[11px] text-gray-400 font-mono">${entry.dose?entry.dose+' '+(entry.unit||getUnit(entry.substance,entry.roa))+' · ':''}${timeAgo(entry.timestamp)}</span><span class="text-[11px] font-mono font-medium" style="color:${sub?.color||'#10b981'}">${pct}%</span></div>
+      ${sub?.warning?`<div class="mt-2 py-2 px-3 rounded-xl text-[11px] text-warn" style="background:rgba(245,158,11,.04);border:1px solid rgba(245,158,11,.1)">⚠ ${sub.warning}</div>`:''}</div>`;
     });
     h+=`</div>`;
   }
-
-  h+=`<a href="https://combo.tripsit.me/" target="_blank" rel="noopener" class="block glass glass-hover p-4 mt-4 text-center">
-    <span class="text-[12px] font-medium text-calm-cyan">🔗 Vérifier les interactions · TripSit</span>
-  </a>`;
-  h+=`</div>`;el.innerHTML=h;
-  if(active.length)requestAnimationFrame(()=>drawPKCanvas(active));
+  if(!active.length&&recent){h+=`<div class="glass p-4 mt-1"><span class="text-[11px] text-gray-400 font-mono">📊 ${recent} entrée${recent>1?'s':''} · 24h</span></div>`}
+  h+=`<a href="https://combo.tripsit.me/" target="_blank" rel="noopener" class="block glass glass-hover p-4 mt-4 text-center"><span class="text-[12px] font-medium text-calm-cyan">🔗 Interactions · TripSit</span></a></div>`;
+  el.innerHTML=h;
+  requestAnimationFrame(()=>drawChart(active));
 }
 
-function drawPKCanvas(activeEntries){
+function drawChart(activeEntries){
   const canvas=document.getElementById('pkCanvas');if(!canvas)return;
   const ctx=canvas.getContext('2d'),dpr=window.devicePixelRatio||1,rect=canvas.getBoundingClientRect();
   canvas.width=rect.width*dpr;canvas.height=rect.height*dpr;ctx.scale(dpr,dpr);
-  const W=rect.width,H=rect.height,pad={top:20,right:16,bottom:36,left:12},pW=W-pad.left-pad.right,pH=H-pad.top-pad.bottom;
+  const W=rect.width,H=rect.height,pad={top:18,right:12,bottom:40,left:12},pW=W-pad.left-pad.right,pH=H-pad.top-pad.bottom;
   ctx.clearRect(0,0,W,H);
-  for(let i=0;i<=4;i++){const y=pad.top+(pH/4)*i;ctx.beginPath();ctx.moveTo(pad.left,y);ctx.lineTo(W-pad.right,y);ctx.strokeStyle=i===4?'rgba(21,36,24,.5)':'rgba(21,36,24,.25)';ctx.lineWidth=.5;ctx.stroke()}
-  ctx.fillStyle='#2d3748';ctx.font='500 9px JetBrains Mono';ctx.textAlign='right';
-  ['100%','75%','50%','25%'].forEach((l,i)=>ctx.fillText(l,pad.left+pW+pad.right-2,pad.top+(pH/4)*i+3));
   const now=Date.now();
+  let tMin,tMax;
+  if(activeEntries.length){
+    tMin=Math.min(...activeEntries.map(e=>e.timestamp))-30*60000;
+    const ends=activeEntries.map(e=>{const rm=ROA_MODIFIERS[e.roa]||ROA_MODIFIERS.Oral;const s=SubstanceDatabase[e.substance];return e.timestamp+(s?(s.duration[0]+s.duration[1])/2*rm.duration*60000:6*3600000)});
+    tMax=Math.max(...ends,now+30*60000);
+  } else {
+    tMin=now-30*60000;tMax=now+6*3600000;
+  }
+  const t2x=t=>pad.left+((t-tMin)/(tMax-tMin))*pW;
+  const v2y=v=>pad.top+pH-v*pH;
+
+  for(let i=0;i<=4;i++){const y=pad.top+(pH/4)*i;ctx.beginPath();ctx.moveTo(pad.left,y);ctx.lineTo(W-pad.right,y);ctx.strokeStyle=i===4?'rgba(21,36,24,.5)':'rgba(21,36,24,.2)';ctx.lineWidth=.5;ctx.stroke()}
+
+  const hourMs=3600000,firstHour=Math.ceil(tMin/hourMs)*hourMs;
+  ctx.font='500 9px JetBrains Mono';ctx.textAlign='center';
+  for(let t=firstHour;t<=tMax;t+=hourMs){
+    const x=t2x(t);
+    ctx.beginPath();ctx.moveTo(x,pad.top);ctx.lineTo(x,pad.top+pH);ctx.strokeStyle='rgba(21,36,24,.3)';ctx.lineWidth=.5;ctx.stroke();
+    ctx.fillStyle='#4b5563';ctx.fillText(hhmm(t),x,H-6);
+  }
+
+  const nx=t2x(now);
+  ctx.setLineDash([4,4]);ctx.beginPath();ctx.moveTo(nx,pad.top);ctx.lineTo(nx,pad.top+pH);ctx.strokeStyle='#34d39960';ctx.lineWidth=1.5;ctx.stroke();ctx.setLineDash([]);
+  ctx.fillStyle='#34d399';ctx.font='600 9px Outfit';ctx.textAlign='center';ctx.fillText('NOW',nx,pad.top-5);
+
+  if(!activeEntries.length){
+    ctx.fillStyle='#374151';ctx.font='500 13px Outfit';ctx.textAlign='center';ctx.fillText('En attente de données…',W/2,H/2-5);
+    return;
+  }
+
   activeEntries.forEach(entry=>{
-    const sub=SubstanceDatabase[entry.substance],pts=generateCurvePoints(entry,150);if(!pts.length)return;
-    const minT=pts[0].time,maxT=pts[pts.length-1].time,col=sub?.color||'#10b981';
-    ctx.beginPath();pts.forEach((p,i)=>{const x=pad.left+((p.time-minT)/(maxT-minT))*pW,y=pad.top+pH-p.y*pH;i===0?ctx.moveTo(x,y):ctx.lineTo(x,y)});
+    const sub=SubstanceDatabase[entry.substance],pts=genPoints(entry);if(!pts.length)return;
+    const col=sub?.color||'#10b981',pk=calcPK(entry);
+
+    ctx.beginPath();
+    pts.forEach((p,i)=>{const x=t2x(p.time),y=v2y(p.y);i===0?ctx.moveTo(x,y):ctx.lineTo(x,y)});
     ctx.strokeStyle=col;ctx.lineWidth=2.5;ctx.lineCap='round';ctx.lineJoin='round';ctx.stroke();
-    const g=ctx.createLinearGradient(0,pad.top,0,pad.top+pH);g.addColorStop(0,col+'25');g.addColorStop(.6,col+'06');g.addColorStop(1,col+'00');
-    ctx.lineTo(pad.left+pW,pad.top+pH);ctx.lineTo(pad.left,pad.top+pH);ctx.closePath();ctx.fillStyle=g;ctx.fill();
-    if(now>=minT&&now<=maxT){
-      const nx=pad.left+((now-minT)/(maxT-minT))*pW,pk=calculatePharmacokinetics(entry,now),ny=pad.top+pH-pk.intensity*pH;
-      ctx.setLineDash([3,4]);ctx.beginPath();ctx.moveTo(nx,pad.top);ctx.lineTo(nx,pad.top+pH);ctx.strokeStyle=col+'25';ctx.lineWidth=1;ctx.stroke();ctx.setLineDash([]);
-      ctx.beginPath();ctx.arc(nx,ny,5,0,Math.PI*2);ctx.fillStyle=col;ctx.fill();
-      ctx.beginPath();ctx.arc(nx,ny,9,0,Math.PI*2);ctx.strokeStyle=col+'35';ctx.lineWidth=2;ctx.stroke();
+    const g=ctx.createLinearGradient(0,pad.top,0,pad.top+pH);g.addColorStop(0,col+'20');g.addColorStop(.7,col+'05');g.addColorStop(1,col+'00');
+    ctx.lineTo(t2x(pts[pts.length-1].time),v2y(0));ctx.lineTo(t2x(pts[0].time),v2y(0));ctx.closePath();ctx.fillStyle=g;ctx.fill();
+
+    if(now>=pts[0].time&&now<=pts[pts.length-1].time){
+      const cy=v2y(calcPK(entry,now).intensity);
+      ctx.beginPath();ctx.arc(nx,cy,5,0,Math.PI*2);ctx.fillStyle=col;ctx.fill();
+      ctx.beginPath();ctx.arc(nx,cy,9,0,Math.PI*2);ctx.strokeStyle=col+'35';ctx.lineWidth=2;ctx.stroke();
     }
+
+    const peakT=entry.timestamp+pk.peakEnd*60000,endT=entry.timestamp+pk.totalEnd*60000;
+    ctx.font='500 8px JetBrains Mono';ctx.textAlign='center';
+    if(peakT>now){ctx.fillStyle=col+'90';ctx.fillText('Pic '+hhmm(peakT),t2x(peakT),pad.top+12)}
+    if(endT>now){ctx.fillStyle='#4b5563';ctx.fillText('Fin '+hhmm(endT),Math.min(t2x(endT),W-pad.right-20),pad.top+pH-4)}
   });
+
   let lx=pad.left+4;
-  activeEntries.forEach(entry=>{const sub=SubstanceDatabase[entry.substance],col=sub?.color||'#10b981';ctx.fillStyle=col;ctx.beginPath();ctx.arc(lx+4,H-10,3.5,0,Math.PI*2);ctx.fill();ctx.fillStyle='#6b7280';ctx.font='500 10px Outfit';ctx.textAlign='left';ctx.fillText(entry.substance,lx+12,H-6);lx+=ctx.measureText(entry.substance).width+28});
+  activeEntries.forEach(entry=>{const sub=SubstanceDatabase[entry.substance],col=sub?.color||'#10b981';ctx.fillStyle=col;ctx.beginPath();ctx.arc(lx+4,H-22,3,0,Math.PI*2);ctx.fill();ctx.fillStyle='#9ca3af';ctx.font='500 10px Outfit';ctx.textAlign='left';ctx.fillText(entry.substance,lx+11,H-18);lx+=ctx.measureText(entry.substance).width+24});
 }
 
 function renderLogForm(el){
   const byCat={};Object.entries(SubstanceDatabase).forEach(([n,s])=>{(byCat[s.cat]=byCat[s.cat]||[]).push(n)});
-  let h=`<div class="fade-in"><h2 class="text-lg font-bold text-white mb-5 mt-1">Nouvelle entrée</h2><div class="space-y-5"><div>
-    <label class="block text-[11px] text-gray-500 mb-2 font-medium uppercase tracking-widest">Substance</label>`;
+  let h=`<div class="fade-in"><h2 class="text-lg font-bold text-white mb-5 mt-1">Nouvelle entrée</h2><div class="space-y-5"><div><label class="block text-[11px] text-gray-400 mb-2 font-medium uppercase tracking-widest">Substance</label>`;
   Object.entries(byCat).forEach(([cat,names])=>{
     h+=`<p class="text-[10px] text-em-600 font-semibold uppercase tracking-widest mt-3 mb-1.5 ml-1">${cat}</p><div class="grid grid-cols-3 gap-2 mb-1">`;
-    names.forEach(s=>{const sub=SubstanceDatabase[s];h+=`<button onclick="selectSubstance('${s}')" data-sub="${s}" class="sub-chip glass-solid p-3 text-center rounded-xl cursor-pointer"><span class="text-xl block mb-1">${sub.emoji}</span><span class="sub-name text-[11px] font-medium text-gray-500">${s}</span></button>`});
-    h+=`</div>`;
+    names.forEach(s=>{const sub=SubstanceDatabase[s];h+=`<button onclick="selectSub('${s}')" data-sub="${s}" class="sub-chip glass-solid p-3 text-center rounded-xl cursor-pointer"><span class="text-xl block mb-1">${sub.emoji}</span><span class="sub-name text-[11px] font-medium text-gray-400">${s}</span></button>`});h+=`</div>`;
   });
-  h+=`</div><div>
-    <label class="block text-[11px] text-gray-500 mb-2 font-medium uppercase tracking-widest">Route (ROA)</label>
-    <div class="grid grid-cols-4 gap-2">${ROA_OPTIONS.map(r=>`<button onclick="selectROA('${r}')" data-roa="${r}" class="roa-chip py-3.5 text-[13px] font-medium rounded-xl border border-forest-700 text-gray-500 cursor-pointer">${r}</button>`).join('')}</div>
-  </div><div>
-    <label class="block text-[11px] text-gray-500 mb-2 font-medium uppercase tracking-widest">Dose</label>
-    <div class="flex gap-2">
-      <input type="number" id="doseInput" class="input-field flex-1" placeholder="Optionnel" min="0" step="any" inputmode="decimal" style="font-size:18px">
-      <span id="unitLabel" class="input-field w-20 text-center text-gray-500 flex items-center justify-center text-sm pointer-events-none">mg</span>
-    </div>
-    <div class="flex gap-2 mt-2" id="doseSuggest"></div>
-  </div><div>
-    <label class="block text-[11px] text-gray-500 mb-2 font-medium uppercase tracking-widest">Heure de prise</label>
-    <input type="datetime-local" id="timeInput" class="input-field" value="${new Date(Date.now()-new Date().getTimezoneOffset()*60000).toISOString().slice(0,16)}">
-  </div>
-  <div id="timerInfo" class="hidden glass p-4" style="border-color:rgba(16,185,129,.12)">
-    <div class="flex items-center gap-2.5 text-sm">
-      <span class="w-7 h-7 rounded-lg bg-em-500/10 flex items-center justify-center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
-      <span class="text-em-400 font-medium text-[13px]" id="timerText"></span>
-    </div>
-  </div>
+  h+=`</div><div><label class="block text-[11px] text-gray-400 mb-2 font-medium uppercase tracking-widest">Route (ROA)</label><div class="grid grid-cols-4 gap-2">${ROA_OPTIONS.map(r=>`<button onclick="selectROA('${r}')" data-roa="${r}" class="roa-chip py-3.5 text-[13px] font-medium rounded-xl border border-forest-700 text-gray-400 cursor-pointer">${r}</button>`).join('')}</div></div>
+  <div><label class="block text-[11px] text-gray-400 mb-2 font-medium uppercase tracking-widest">Dose</label><div class="flex gap-2"><input type="number" id="doseInput" class="input-field flex-1" placeholder="Optionnel" min="0" step="any" inputmode="decimal" style="font-size:18px"><span id="unitLabel" class="input-field w-20 text-center text-gray-400 flex items-center justify-center text-sm pointer-events-none">mg</span></div><div class="flex gap-2 mt-2" id="doseSuggest"></div><div id="doseWarn" class="hidden rounded-xl p-3 mt-2 text-[12px]" style="background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.15);color:#fbbf24"></div></div>
+  <div><label class="block text-[11px] text-gray-400 mb-2 font-medium uppercase tracking-widest">Heure de prise</label><input type="datetime-local" id="timeInput" class="input-field" value="${new Date(Date.now()-new Date().getTimezoneOffset()*60000).toISOString().slice(0,16)}"></div>
+  <div id="timerInfo" class="hidden glass p-4" style="border-color:rgba(16,185,129,.12)"><div class="flex items-center gap-2.5 text-sm"><span class="w-7 h-7 rounded-lg bg-em-500/10 flex items-center justify-center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span><span class="text-em-400 font-medium text-[13px]" id="timerText"></span></div></div>
   <div id="warningBox" class="hidden rounded-xl p-4 text-[13px]" style="background:rgba(245,158,11,.04);border:1px solid rgba(245,158,11,.12);color:#fbbf24"></div>
   <div id="infoBox" class="hidden rounded-xl p-4 text-[13px]" style="background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);color:#38bdf8"></div>
-  <div>
-    <label class="block text-[11px] text-gray-500 mb-2 font-medium uppercase tracking-widest">Notes <span class="text-gray-600 normal-case">(optionnel)</span></label>
-    <textarea id="notesInput" class="input-field" rows="2" placeholder="Contexte, setting, mood..."></textarea>
-  </div>
-  <button onclick="submitEntry()" id="submitBtn" class="btn-primary w-full py-4 text-[15px] flex items-center justify-center gap-2 opacity-40 pointer-events-none transition-opacity duration-300">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg>
-    Enregistrer
-  </button></div></div>`;
-  el.innerHTML=h;window._logState={substance:null,roa:null};
+  <div><label class="block text-[11px] text-gray-400 mb-2 font-medium uppercase tracking-widest">Notes <span class="text-gray-500 normal-case">(optionnel)</span></label><textarea id="notesInput" class="input-field" rows="2" placeholder="Contexte, setting, mood..."></textarea></div>
+  <button onclick="submitEntry()" id="submitBtn" class="btn-primary w-full py-4 text-[15px] flex items-center justify-center gap-2 opacity-40 pointer-events-none transition-opacity duration-300"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg>Enregistrer</button></div></div>`;
+  el.innerHTML=h;window._ls={substance:null,roa:null};
+  document.getElementById('doseInput').addEventListener('input',checkDoseLimit);
 }
 
-function selectSubstance(name){
-  window._logState.substance=name;
+function selectSub(name){
+  window._ls.substance=name;
   document.querySelectorAll('.sub-chip').forEach(b=>b.classList.toggle('selected',b.dataset.sub===name));
-  const sub=SubstanceDatabase[name];
-  const wb=document.getElementById('warningBox'),ib=document.getElementById('infoBox');
+  const sub=SubstanceDatabase[name],wb=document.getElementById('warningBox'),ib=document.getElementById('infoBox');
   wb.classList.add('hidden');ib.classList.add('hidden');
   if(sub.warning){wb.classList.remove('hidden');wb.innerHTML='⚠️ '+sub.warning}
   if(sub.wait_period){wb.classList.remove('hidden');wb.innerHTML='⏳ '+sub.wait_period}
   if(sub.info){ib.classList.remove('hidden');ib.innerHTML='ℹ️ '+sub.info}
-  refreshUnitAndPresets();
-  updateTimer();validateForm();
+  refreshUnits();updateTimer();validateForm();
 }
-
-function selectROA(roa){
-  window._logState.roa=roa;
-  document.querySelectorAll('.roa-chip').forEach(b=>b.classList.toggle('selected',b.dataset.roa===roa));
-  refreshUnitAndPresets();
-  updateTimer();validateForm();
+function selectROA(roa){window._ls.roa=roa;document.querySelectorAll('.roa-chip').forEach(b=>b.classList.toggle('selected',b.dataset.roa===roa));refreshUnits();updateTimer();validateForm()}
+function refreshUnits(){
+  const{substance:s,roa:r}=window._ls||{};if(!s)return;
+  document.getElementById('unitLabel').textContent=getUnit(s,r);
+  const v=getPresets(s,r),sg=document.getElementById('doseSuggest');
+  sg.innerHTML=v.map(x=>`<button onclick="document.getElementById('doseInput').value=${x};checkDoseLimit()" class="flex-1 py-2.5 rounded-xl text-[13px] font-mono text-gray-400 cursor-pointer" style="background:rgba(255,255,255,.02);border:1px solid rgba(21,36,24,.5)">${x}</button>`).join('');
+  checkDoseLimit();
 }
-
-function refreshUnitAndPresets(){
-  const{substance,roa}=window._logState||{};
-  if(!substance)return;
-  const u=getUnit(substance,roa);
-  document.getElementById('unitLabel').textContent=u;
-  const vals=getPresets(substance,roa);
-  const suggest=document.getElementById('doseSuggest');
-  suggest.innerHTML=vals.map(v=>`<button onclick="document.getElementById('doseInput').value=${v}" class="flex-1 py-2.5 rounded-xl text-[13px] font-mono text-gray-400 cursor-pointer" style="background:rgba(255,255,255,.02);border:1px solid rgba(21,36,24,.5)">${v}</button>`).join('');
+function checkDoseLimit(){
+  const{substance:s}=window._ls||{};if(!s)return;
+  const sub=SubstanceDatabase[s],dw=document.getElementById('doseWarn'),val=parseFloat(document.getElementById('doseInput').value);
+  if(!dw)return;dw.classList.add('hidden');
+  if(!isNaN(val)&&val>0&&sub.maxSafe&&val>sub.maxSafe){dw.classList.remove('hidden');dw.innerHTML=`⚠️ Dose élevée (seuil conseillé : ${sub.maxSafe} ${getUnit(s,window._ls.roa)})`}
 }
-
 function updateTimer(){
-  const{substance,roa}=window._logState||{};if(!substance||!roa)return;
-  const sub=SubstanceDatabase[substance],mod=ROA_MODIFIERS[roa]||1;
-  const takeTime=new Date(document.getElementById('timeInput').value).getTime();if(isNaN(takeTime))return;
-  const peakEnd=new Date(takeTime+(sub.onset[1]*mod+sub.peak*mod)*60000);
-  const totalEnd=new Date(takeTime+((sub.duration[0]+sub.duration[1])/2)*mod*60000);
+  const{substance:s,roa:r}=window._ls||{};if(!s||!r)return;
+  const sub=SubstanceDatabase[s],rm=ROA_MODIFIERS[r]||ROA_MODIFIERS.Oral;
+  const take=new Date(document.getElementById('timeInput').value).getTime();if(isNaN(take))return;
+  const peakEnd=new Date(take+(sub.onset[1]*rm.onset+sub.peak*rm.peak)*60000);
+  const totalEnd=new Date(take+((sub.duration[0]+sub.duration[1])/2)*rm.duration*60000);
   document.getElementById('timerInfo').classList.remove('hidden');
-  document.getElementById('timerText').textContent=`Plateau → ${peakEnd.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})}  ·  Fin → ${totalEnd.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})}`;
+  document.getElementById('timerText').textContent=`Plateau → ${hhmm(peakEnd.getTime())}  ·  Fin → ${hhmm(totalEnd.getTime())}`;
 }
-
-function validateForm(){
-  const btn=document.getElementById('submitBtn'),ok=window._logState?.substance&&window._logState?.roa;
-  btn.style.opacity=ok?'1':'.4';btn.style.pointerEvents=ok?'auto':'none';
-}
-
+function validateForm(){const btn=document.getElementById('submitBtn'),ok=window._ls?.substance&&window._ls?.roa;btn.style.opacity=ok?'1':'.4';btn.style.pointerEvents=ok?'auto':'none'}
 function submitEntry(){
-  const{substance,roa}=window._logState;if(!substance||!roa)return;
-  const u=getUnit(substance,roa);
-  Store.add({id:mkId(),substance,roa,dose:parseFloat(document.getElementById('doseInput').value)||null,unit:u,notes:document.getElementById('notesInput').value.trim(),timestamp:new Date(document.getElementById('timeInput').value).getTime(),created:Date.now()});
-  router.navigate('dashboard');
+  const{substance:s,roa:r}=window._ls;if(!s||!r)return;
+  const dose=parseFloat(document.getElementById('doseInput').value);
+  if(dose<0){showToast('Dose invalide','warn');return}
+  const u=getUnit(s,r);
+  Store.add({id:mkId(),substance:s,roa:r,dose:dose||null,unit:u,notes:document.getElementById('notesInput').value.trim(),timestamp:new Date(document.getElementById('timeInput').value).getTime(),created:Date.now()});
+  showToast(`✓ ${s} enregistré`);router.navigate('dashboard');
 }
 
 function renderHistory(el){
   const entries=Store.getAll();
-  let h=`<div class="fade-in"><div class="flex items-center justify-between mb-5 mt-1">
-    <h2 class="text-lg font-bold text-white">Historique</h2>
-    <span class="text-[11px] font-mono text-gray-600 px-2.5 py-1 rounded-full" style="background:rgba(255,255,255,.02)">${entries.length} entrée${entries.length!==1?'s':''}</span></div>`;
-  if(!entries.length){h+=`<div class="glass p-10 text-center"><p class="text-gray-500 text-sm">Aucune entrée</p></div>`}
-  else{
-    const grouped={};entries.forEach(e=>{const d=new Date(e.timestamp).toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'});(grouped[d]=grouped[d]||[]).push(e)});
-    Object.entries(grouped).forEach(([day,items])=>{
-      h+=`<p class="text-[10px] text-gray-600 font-semibold uppercase tracking-widest mt-5 mb-2 ml-1">${day}</p><div class="space-y-2 stagger">`;
-      items.forEach(entry=>{
-        const sub=SubstanceDatabase[entry.substance],pk=calculatePharmacokinetics(entry),isActive=pk.phase!=='ended'&&pk.intensity>.01;
-        h+=`<div class="glass glass-hover p-4 flex items-center gap-3">
-          <span class="text-xl">${sub?.emoji||'💊'}</span>
-          <div class="flex-1 min-w-0">
-            <div class="flex items-center gap-2">
-              <span class="text-white font-medium text-[14px]">${entry.substance}</span>
-              <span class="text-[10px] font-mono text-gray-600 px-1.5 py-0.5 rounded-md" style="background:rgba(255,255,255,.03)">${entry.roa}</span>
-              ${isActive?'<span class="w-1.5 h-1.5 rounded-full bg-em-400 animate-pulse"></span>':''}
-            </div>
-            <p class="text-[11px] text-gray-600 font-mono mt-0.5">${entry.dose?entry.dose+' '+(entry.unit||getUnit(entry.substance,entry.roa))+' · ':''}${new Date(entry.timestamp).toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})}</p>
-            ${entry.notes?`<p class="text-[11px] text-gray-500 mt-1 truncate">${entry.notes}</p>`:''}
-          </div>
-          <button onclick="event.stopPropagation();deleteEntry('${entry.id}')" class="w-10 h-10 rounded-xl flex items-center justify-center text-gray-700 hover:text-red-400 hover:bg-red-500/8 transition-all shrink-0">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
-          </button>
-        </div>`;
-      });h+=`</div>`;
-    });
-  }
+  let h=`<div class="fade-in"><div class="flex items-center justify-between mb-5 mt-1"><h2 class="text-lg font-bold text-white">Historique</h2><span class="text-[11px] font-mono text-gray-500 px-2.5 py-1 rounded-full" style="background:rgba(255,255,255,.02)">${entries.length} entrée${entries.length!==1?'s':''}</span></div>`;
+  if(!entries.length){h+=`<div class="glass p-10 text-center"><p class="text-gray-400 text-sm">Aucune entrée</p></div>`}
+  else{const gr={};entries.forEach(e=>{const d=new Date(e.timestamp).toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'});(gr[d]=gr[d]||[]).push(e)});
+    Object.entries(gr).forEach(([day,items])=>{h+=`<p class="text-[10px] text-gray-500 font-semibold uppercase tracking-widest mt-5 mb-2 ml-1">${day}</p><div class="space-y-2 stagger">`;
+      items.forEach(entry=>{const sub=SubstanceDatabase[entry.substance],pk=calcPK(entry),act=pk.phase!=='ended'&&pk.intensity>.005;
+        h+=`<div class="glass glass-hover p-4 flex items-center gap-3"><span class="text-xl">${sub?.emoji||'💊'}</span><div class="flex-1 min-w-0"><div class="flex items-center gap-2"><span class="text-white font-medium text-[14px]">${entry.substance}</span><span class="text-[10px] font-mono text-gray-500 px-1.5 py-0.5 rounded-md" style="background:rgba(255,255,255,.03)">${entry.roa}</span>${act?'<span class="w-1.5 h-1.5 rounded-full bg-em-400 animate-pulse"></span>':''}</div><p class="text-[11px] text-gray-400 font-mono mt-0.5">${entry.dose?entry.dose+' '+(entry.unit||getUnit(entry.substance,entry.roa))+' · ':''}${hhmm(entry.timestamp)}</p>${entry.notes?`<p class="text-[11px] text-gray-500 mt-1 truncate">${entry.notes}</p>`:''}</div><button onclick="event.stopPropagation();delEntry('${entry.id}')" class="w-10 h-10 rounded-xl flex items-center justify-center text-gray-600 hover:text-red-400 transition-all shrink-0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></button></div>`});h+=`</div>`})}
   h+=`</div>`;el.innerHTML=h;
 }
-
-function deleteEntry(id){Store.remove(id);renderHistory(document.getElementById('app'))}
+function delEntry(id){Store.remove(id);renderHistory(document.getElementById('app'))}
 
 function renderSettings(el){
   const count=Store.getAll().length;
   let h=`<div class="fade-in"><h2 class="text-lg font-bold text-white mb-5 mt-1">Configuration</h2><div class="space-y-3 stagger">
-    <div class="glass p-5">
-      <div class="flex items-center gap-3 mb-3">
-        <span class="w-9 h-9 rounded-xl bg-em-500/10 flex items-center justify-center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
-        <div><p class="text-sm text-white font-medium">Données</p><p class="text-[11px] text-gray-500">${count} entrée${count!==1?'s':''} · stockage local</p></div>
-      </div>
-      <div class="flex gap-2">
-        <button onclick="Store.exportJSON()" class="btn-ghost px-4 py-3 text-[12px] flex-1 flex items-center justify-center gap-1.5">Export JSON</button>
-        <label class="btn-ghost px-4 py-3 text-[12px] flex-1 flex items-center justify-center gap-1.5 cursor-pointer">Import<input type="file" accept=".json" class="hidden" onchange="handleImport(this)"></label>
-      </div>
-    </div>
-    <div class="glass p-5">
-      <div class="flex items-center gap-3 mb-3">
-        <span class="w-9 h-9 rounded-xl bg-indigo-500/10 flex items-center justify-center">🔒</span>
-        <div><p class="text-sm text-white font-medium">Sécurité</p><p class="text-[11px] text-gray-500">PIN de verrouillage</p></div>
-      </div>
-      <button onclick="resetPin()" class="btn-ghost px-4 py-3 text-[12px] w-full">Changer le PIN</button>
-    </div>
-    <div class="glass p-5">
-      <div class="flex items-center gap-3 mb-3">
-        <span class="w-9 h-9 rounded-xl bg-red-500/10 flex items-center justify-center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></span>
-        <div><p class="text-sm text-white font-medium">Zone dangereuse</p><p class="text-[11px] text-gray-500">Supprimer toutes les données</p></div>
-      </div>
-      <button onclick="confirmClear()" class="btn-danger px-4 py-3 text-[12px] w-full">Tout effacer</button>
-    </div>
-    <div class="glass p-5">
-      <p class="text-sm text-white font-medium mb-3">Base de substances</p><div class="space-y-0">`;
-  let lastCat='';
-  Object.entries(SubstanceDatabase).forEach(([name,sub])=>{
-    if(sub.cat!==lastCat){lastCat=sub.cat;h+=`<p class="text-[10px] text-em-600 font-semibold uppercase tracking-widest pt-3 pb-1">${sub.cat}</p>`}
-    h+=`<div class="flex items-center justify-between py-2.5 border-b border-forest-700/20"><div class="flex items-center gap-2"><span class="text-sm">${sub.emoji}</span><span class="text-[13px] text-gray-300">${name}</span></div><span class="text-[10px] font-mono text-gray-600">${sub.onset[0]}-${sub.onset[1]}min → ${Math.round(sub.duration[0]/60)}-${Math.round(sub.duration[1]/60)}h</span></div>`;
-  });
+    <div class="glass p-5"><div class="flex items-center gap-3 mb-3"><span class="w-9 h-9 rounded-xl bg-em-500/10 flex items-center justify-center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span><div><p class="text-sm text-white font-medium">Données</p><p class="text-[11px] text-gray-400">${count} entrée${count!==1?'s':''} · local</p></div></div>
+    <div class="flex gap-2"><button onclick="Store.exportJSON()" class="btn-ghost px-3 py-3 text-[12px] flex-1">Export</button><button onclick="Store.copyJSON()" class="btn-ghost px-3 py-3 text-[12px] flex-1">📋 Copier</button><label class="btn-ghost px-3 py-3 text-[12px] flex-1 flex items-center justify-center cursor-pointer">Import<input type="file" accept=".json" class="hidden" onchange="handleImport(this)"></label></div></div>
+    <div class="glass p-5"><div class="flex items-center gap-3 mb-3"><span class="w-9 h-9 rounded-xl bg-indigo-500/10 flex items-center justify-center">🔒</span><div><p class="text-sm text-white font-medium">Sécurité</p><p class="text-[11px] text-gray-400">PIN · session 15min</p></div></div><button onclick="resetPin()" class="btn-ghost px-4 py-3 text-[12px] w-full">Changer le PIN</button></div>
+    <div class="glass p-5"><div class="flex items-center gap-3 mb-3"><span class="w-9 h-9 rounded-xl bg-red-500/10 flex items-center justify-center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></span><div><p class="text-sm text-white font-medium">Zone dangereuse</p><p class="text-[11px] text-gray-400">Tout supprimer</p></div></div><button onclick="confirmClear()" class="btn-danger px-4 py-3 text-[12px] w-full">Tout effacer</button></div>
+    <div class="glass p-5"><p class="text-sm text-white font-medium mb-3">Base de substances</p><div class="space-y-0">`;
+  let lc='';Object.entries(SubstanceDatabase).forEach(([n,s])=>{if(s.cat!==lc){lc=s.cat;h+=`<p class="text-[10px] text-em-600 font-semibold uppercase tracking-widest pt-3 pb-1">${s.cat}</p>`}h+=`<div class="flex items-center justify-between py-2.5 border-b border-forest-700/20"><div class="flex items-center gap-2"><span class="text-sm">${s.emoji}</span><span class="text-[13px] text-gray-300">${n}</span>${s.maxSafe?`<span class="text-[9px] font-mono text-gray-500">max:${s.maxSafe}</span>`:''}</div><span class="text-[10px] font-mono text-gray-500">${s.onset[0]}-${s.onset[1]}min → ${Math.round(s.duration[0]/60)}-${Math.round(s.duration[1]/60)}h</span></div>`});
   h+=`</div></div>
-    <a href="https://psychonautwiki.org/" target="_blank" rel="noopener" class="block glass glass-hover p-4 text-center"><span class="text-[12px] font-medium text-calm-indigo">📖 PsychonautWiki · Base de connaissances</span></a>
-    <a href="https://combo.tripsit.me/" target="_blank" rel="noopener" class="block glass glass-hover p-4 text-center"><span class="text-[12px] font-medium text-calm-cyan">🔗 TripSit · Tableau des interactions</span></a>
-    <div class="glass p-4 text-center">
-      <p class="text-[11px] text-gray-700">SafeCheck v3.0 · OLED · 100% local</p>
-      <p class="text-[10px] text-gray-800 mt-1">Ne remplace pas un avis médical</p>
-    </div>
-  </div></div>`;
+    <a href="https://psychonautwiki.org/" target="_blank" rel="noopener" class="block glass glass-hover p-4 text-center"><span class="text-[12px] font-medium text-calm-indigo">📖 PsychonautWiki</span></a>
+    <a href="https://combo.tripsit.me/" target="_blank" rel="noopener" class="block glass glass-hover p-4 text-center"><span class="text-[12px] font-medium text-calm-cyan">🔗 TripSit · Interactions</span></a>
+    <div class="glass p-4 text-center"><p class="text-[11px] text-gray-500">SafeCheck v4.0 · OLED · 100% local</p><p class="text-[10px] text-gray-600 mt-1">Ne remplace pas un avis médical</p></div></div></div>`;
   el.innerHTML=h;
 }
 
-function resetPin(){if(confirm('Redéfinir le PIN ?')){localStorage.removeItem(PIN_KEY);document.getElementById('mainApp').classList.add('hidden');document.getElementById('ambientBg').classList.add('hidden');document.getElementById('pinScreen').classList.remove('hidden');initPinScreen()}}
-async function handleImport(input){if(!input.files[0])return;try{const c=await Store.importJSON(input.files[0]);alert(c+' entrées importées');renderSettings(document.getElementById('app'))}catch(e){alert('Erreur : '+e.message)}}
+function resetPin(){if(confirm('Redéfinir le PIN ?')){localStorage.removeItem(PIN_KEY);localStorage.removeItem(AUTH_KEY);document.getElementById('mainApp').classList.add('hidden');document.getElementById('ambientBg').classList.add('hidden');document.getElementById('pinScreen').classList.remove('hidden');initPinScreen()}}
+async function handleImport(input){if(!input.files[0])return;try{const c=await Store.importJSON(input.files[0]);showToast(c+' entrées importées');renderSettings(document.getElementById('app'))}catch(e){showToast('Erreur : '+e.message,'warn')}}
 function confirmClear(){if(confirm('Supprimer définitivement toutes les entrées ?')){Store.clear();renderSettings(document.getElementById('app'))}}
 
 let refreshInterval;
-function startAutoRefresh(){clearInterval(refreshInterval);refreshInterval=setInterval(()=>{if(router.current==='dashboard')renderDashboard(document.getElementById('app'))},15000)}
+function startAutoRefresh(){clearInterval(refreshInterval);refreshInterval=setInterval(()=>{if(router.current==='dashboard')renderDashboard(document.getElementById('app'))},12000)}
 
-document.addEventListener('DOMContentLoaded',()=>initPinScreen());
+document.addEventListener('DOMContentLoaded',()=>{
+  initPinScreen();
+  const swCode=`self.addEventListener('install',e=>self.skipWaiting());self.addEventListener('activate',e=>self.clients.claim());self.addEventListener('fetch',e=>{e.respondWith(caches.open('sc-v4').then(c=>c.match(e.request).then(r=>r||fetch(e.request).then(nr=>{c.put(e.request,nr.clone());return nr}))))});`;
+  try{const blob=new Blob([swCode],{type:'application/javascript'});navigator.serviceWorker&&navigator.serviceWorker.register(URL.createObjectURL(blob)).catch(()=>{})}catch{}
+});
 document.getElementById('app').addEventListener('change',e=>{if(e.target.id==='timeInput')updateTimer()});
 </script>
 </body>
