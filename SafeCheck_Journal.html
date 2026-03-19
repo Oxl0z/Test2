@@ -114,20 +114,20 @@ function openPanic(){$('panicOverlay').classList.remove('hidden')}
 function closePanic(e){if(!e||e.target===e.currentTarget)$('panicOverlay').classList.add('hidden')}
 
 const DB=Object.freeze({
-  THC:        {cat:'Cannabis',    onset:[10,30], peak:120,dur:[240,360], half:180, unit:'puff',  color:'#22c55e',emoji:'🌿', us:{Vaped:'puff',Oral:'joint'}, maxS:5},
-  CBD:        {cat:'Cannabis',    onset:[15,45], peak:90, dur:[180,360], half:240, unit:'joint', color:'#86efac',emoji:'🍃', us:{Oral:'joint',Vaped:'puff'}, info:'Non psychoactif'},
-  '3-MMC':    {cat:'Cathinones',  onset:[15,45], peak:90, dur:[180,300], half:90,  unit:'trace', color:'#fbbf24',emoji:'⚡', us:{Nasal:'trace',Oral:'mg',IV:'mg'}, warn:'Risque de redose élevé', maxS:4},
-  '4-MMC':    {cat:'Cathinones',  onset:[20,40], peak:120,dur:[240,360], half:150, unit:'trace', color:'#f97316',emoji:'🔶', us:{Nasal:'trace',Oral:'mg',IV:'mg'}, maxS:4},
-  Coke:       {cat:'Stimulants',  onset:[5,10],  peak:30, dur:[45,70],   half:25,  unit:'trace', color:'#e5e7eb',emoji:'❄️', us:{Nasal:'trace',IV:'mg',Oral:'mg'}, warn:'Cardiotoxicité en combo', maxS:5},
-  Speed:      {cat:'Stimulants',  onset:[20,60], peak:120,dur:[300,480], half:600, unit:'trace', color:'#f472b6',emoji:'⚙️', us:{Nasal:'trace',Oral:'mg'}, maxS:3},
-  MDMA:       {cat:'Empathogènes',onset:[45,75], peak:180,dur:[300,480], half:420, unit:'mg',    color:'#a78bfa',emoji:'💎', us:{Nasal:'trace',Oral:'mg'}, wp:'3 mois min', maxS:200},
-  Ecstasy:    {cat:'Empathogènes',onset:[30,60], peak:150,dur:[240,420], half:420, unit:'cp',    color:'#d946ef',emoji:'🪩', warn:'Dosage variable', wp:'3 mois min', maxS:2},
-  '2C-B':     {cat:'Psychédéliques',onset:[30,75],peak:120,dur:[300,420],half:240, unit:'mg',    color:'#c084fc',emoji:'🔮', us:{Nasal:'trace',Oral:'mg'}, maxS:25},
-  LSD:        {cat:'Psychédéliques',onset:[30,60],peak:180,dur:[480,720],half:360, unit:'buvard',color:'#818cf8',emoji:'🌀', info:'Très longue durée', maxS:3},
-  Ket:        {cat:'Dissociatifs',onset:[5,20],  peak:45, dur:[60,120],  half:45,  unit:'trace', color:'#22d3ee',emoji:'🕳️', us:{Nasal:'trace',IV:'mg',Oral:'mg'}, warn:'K-hole à haute dose', maxS:5},
-  GHB:        {cat:'Dépresseurs', onset:[15,30], peak:60, dur:[90,180],  half:30,  unit:'ml',    color:'#f43f5e',emoji:'🧪', warn:'JAMAIS avec alcool. Marge étroite', maxS:2},
-  Alcool:     {cat:'Dépresseurs', onset:[10,30], peak:60, dur:[120,300], half:60,  unit:'verres',color:'#fbbf24',emoji:'🍺', maxS:6},
-  Nicotine:   {cat:'Stimulants',  onset:[1,3],   peak:10, dur:[20,40],   half:120, unit:'clope', color:'#a3a3a3',emoji:'🚬', us:{Vaped:'puff'}}
+  THC:        {cat:'Cannabis',    onset:[10,30], peak:120,dur:[240,360], half:120, unit:'puff',  color:'#22c55e',emoji:'🌿', us:{Vaped:'puff',Oral:'joint'}, maxS:5},
+  CBD:        {cat:'Cannabis',    onset:[15,45], peak:90, dur:[180,360], half:120, unit:'joint', color:'#86efac',emoji:'🍃', us:{Oral:'joint',Vaped:'puff'}, info:'Non psychoactif'},
+  '3-MMC':    {cat:'Cathinones',  onset:[15,45], peak:90, dur:[180,300], half:60,  unit:'trace', color:'#fbbf24',emoji:'⚡', us:{Nasal:'trace',Oral:'mg',IV:'mg'}, warn:'Risque de redose élevé', maxS:4},
+  '4-MMC':    {cat:'Cathinones',  onset:[20,40], peak:120,dur:[240,360], half:60,  unit:'trace', color:'#f97316',emoji:'🔶', us:{Nasal:'trace',Oral:'mg',IV:'mg'}, maxS:4},
+  Coke:       {cat:'Stimulants',  onset:[5,10],  peak:30, dur:[45,70],   half:20,  unit:'trace', color:'#e5e7eb',emoji:'❄️', us:{Nasal:'trace',IV:'mg',Oral:'mg'}, warn:'Cardiotoxicité en combo', maxS:5},
+  Speed:      {cat:'Stimulants',  onset:[20,60], peak:120,dur:[300,480], half:180, unit:'trace', color:'#f472b6',emoji:'⚙️', us:{Nasal:'trace',Oral:'mg'}, maxS:3},
+  MDMA:       {cat:'Empathogènes',onset:[45,75], peak:180,dur:[300,480], half:180, unit:'mg',    color:'#a78bfa',emoji:'💎', us:{Nasal:'trace',Oral:'mg'}, wp:'3 mois min', maxS:200},
+  Ecstasy:    {cat:'Empathogènes',onset:[30,60], peak:150,dur:[240,420], half:180, unit:'cp',    color:'#d946ef',emoji:'🪩', warn:'Dosage variable', wp:'3 mois min', maxS:2},
+  '2C-B':     {cat:'Psychédéliques',onset:[30,75],peak:120,dur:[300,420],half:120, unit:'mg',    color:'#c084fc',emoji:'🔮', us:{Nasal:'trace',Oral:'mg'}, maxS:25},
+  LSD:        {cat:'Psychédéliques',onset:[30,60],peak:180,dur:[480,720],half:180, unit:'buvard',color:'#818cf8',emoji:'🌀', info:'Très longue durée', maxS:3},
+  Ket:        {cat:'Dissociatifs',onset:[5,20],  peak:45, dur:[60,120],  half:30,  unit:'trace', color:'#22d3ee',emoji:'🕳️', us:{Nasal:'trace',IV:'mg',Oral:'mg'}, warn:'K-hole à haute dose', maxS:5},
+  GHB:        {cat:'Dépresseurs', onset:[15,30], peak:60, dur:[90,180],  half:25,  unit:'ml',    color:'#f43f5e',emoji:'🧪', warn:'JAMAIS avec alcool. Marge étroite', maxS:2},
+  Alcool:     {cat:'Dépresseurs', onset:[10,30], peak:60, dur:[120,300], half:50,  unit:'verres',color:'#fbbf24',emoji:'🍺', maxS:6},
+  Nicotine:   {cat:'Stimulants',  onset:[1,3],   peak:10, dur:[20,40],   half:15,  unit:'clope', color:'#a3a3a3',emoji:'🚬', us:{Vaped:'puff'}}
 });
 
 const LN2=Math.LN2,VMAX=1.5,KM=0.5,SLEEP_TH=0.15,REDOSE_TH=0.75,CRIT_TH=1.2,SESSION_GAP=60;
@@ -193,10 +193,11 @@ function findRedoseWindow(entries,now){
   const raw=totalLoadRaw(entries,now);
   if(raw<=0){_redoseCache={ts:now,val:null};return null}
   let peakRaw=raw;
-  for(let i=1;i<=90;i++){const v=totalLoadRaw(entries,now-i*60000);if(v>peakRaw)peakRaw=v}
+  for(let i=-60;i<=120;i++){const v=totalLoadRaw(entries,now+i*60000);if(v>peakRaw)peakRaw=v}
   const target=peakRaw*REDOSE_TH;
-  if(raw<=target){_redoseCache={ts:now,val:now};return now}
-  for(let t=now;t<now+12*36e5;t+=60000){
+  const peakTime=(() => {for(let i=0;i<=120;i++){const t=now+i*60000;if(totalLoadRaw(entries,t)<totalLoadRaw(entries,t-60000))return t}return now})();
+  const searchStart=Math.max(now,peakTime);
+  for(let t=searchStart;t<now+12*36e5;t+=60000){
     if(totalLoadRaw(entries,t)<=target){
       const snapped=Math.ceil(t/(3e5))*3e5;
       _redoseCache={ts:now,val:snapped};
@@ -225,8 +226,12 @@ function fireReminder(){
 function reqNotifPerm(){if('Notification' in window&&Notification.permission==='default')Notification.requestPermission()}
 
 function findSleepTime(entries,now){
-  for(let t=now;t<now+24*36e5;t+=60000){
-    if(totalLoad(entries,t)<SLEEP_TH)return t;
+  for(let t=now;t<now+48*36e5;t+=120000){
+    const raw=totalLoadRaw(entries,t);
+    if(raw<SLEEP_TH)return t;
+  }
+  for(let t=now;t<now+48*36e5;t+=120000){
+    if(totalLoadRaw(entries,t)<0.25)return t;
   }
   return null;
 }
@@ -311,8 +316,9 @@ function vDash(el){
       const tl=Math.max(0,...ses.entries.map(e=>(entryEndTime(e)-now)/60000));
       const totalDose=ses.entries.reduce((s,e)=>(e.dose||0)+s,0);
       const u=ses.entries[0].unit||gU(ses.sub,ses.roa);
-      const phase=cNow>.8?'peak':cNow>.3?'onset':'comedown';
-      const pl=phase==='peak'?'▲ Peak':phase==='onset'?'↗ Montée':'↘ Descente';
+      const cFut=ses.entries.reduce((s,e)=>s+calcC(e,now+60000),0);
+      const phase=cNow<.01?'ended':cFut>cNow+.005?'onset':cFut<cNow-.005?'comedown':'peak';
+      const pl=phase==='peak'?'▲ Peak':phase==='onset'?'↗ Montée':phase==='comedown'?'↘ Descente':'—';
       const pc=phase==='peak'?'#fbbf24':phase==='onset'?'#34d399':'#6b7280';
       h+=`<div class="glass glass-hover p-4">
         <div class="flex items-center justify-between mb-3"><div class="flex items-center gap-2.5"><span class="text-xl">${sub?.emoji||'💊'}</span><div><span class="text-white font-semibold text-[15px]">${ses.sub}</span><span class="text-[10px] font-mono ml-2 px-1.5 py-0.5 rounded-md text-gray-400" style="background:rgba(255,255,255,.03)">${ses.roa}</span>${n>1?`<span class="text-[10px] font-mono ml-1 px-1.5 py-0.5 rounded-md text-warn" style="background:rgba(245,158,11,.08)">×${n}</span>`:''}</div></div><span class="text-[11px] font-mono font-medium" style="color:${pc}">${pl}</span></div>
